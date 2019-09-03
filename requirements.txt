@@ -1,0 +1,9 @@
+requests==2.22.0
+beautifulsoup4==4.8.0
+fastai==1.0.57
+gpt_2_simple==0.5.4
+pandas==0.25.0
+rouge==0.3.2
+sentencepiece==0.1.83
+atlas==0.27.0
+tensorflow==1.14.0
