@@ -57,3 +57,4 @@ example3.py - This will demonstrate on how to generate script using GPT2
 
 1. Package this project as PIP Library
 2. Add evaluation scheme's for generated scripts such as ROUGE and Perplexity
+3. Clean ULMFiT generated script
