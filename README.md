@@ -7,6 +7,11 @@ The package currently supports two models -
 2. [GPT2](https://openai.com/blog/better-language-models/) - From OpenAI
 
 ---
+### Download -
+
+```pip install filmykeeda```
+
+---
 ### Data Used -
 
 Both the models have been trained on a extensive corpus of scripts written by Aaron Sorkin. The works included in this project are -
