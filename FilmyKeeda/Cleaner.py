@@ -1,7 +1,6 @@
-import pandas as pd
 import os
 
-
+import pandas as pd
 from FilmyKeeda.utils.dataConverter import dataToList
 
 
@@ -9,6 +8,7 @@ class cleanerToCSV:
     """Accepts the path to the directory containing scripts
     and converts the text after cleaning to CSV file in a given directory
     """
+
     def __init__(self, directoryPath, savePath, nConversation=1):
         """Initates the process and saves a CSV file with rows of conversation
         
@@ -23,7 +23,7 @@ class cleanerToCSV:
         self.contents = os.listdir(directoryPath)
         self.strings = []
         self.stickTogeatherIndex = nConversation
-        tempStrings = dataToList.getStrings(self.contents,self.directoryPath)
+        tempStrings = dataToList.getStrings(self.contents, self.directoryPath)
         self.totalLines = len(tempStrings)
         if self.stickTogeatherIndex == 1:
             self.strings = tempStrings
@@ -55,6 +55,7 @@ class cleanerToText:
     """Accepts the path to the directory containing scripts
     and converts the text after cleaning to .txt file in a given directory
     """
+
     def __init__(self, directoryPath, savePath):
         """Initates the process and saves a .txt file with lines of conversation
         

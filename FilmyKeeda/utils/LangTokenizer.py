@@ -1,16 +1,16 @@
 import os
 
+import FilmyKeeda.utils.modelDownload as connection
 import sentencepiece as spm
 from fastai.basic_train import load_learner
 from fastai.text import *
-
-import FilmyKeeda.utils.modelDownload as connection
 
 
 class LangTokenizer(BaseTokenizer):
     """SentencePiece Tokenizer class that is to be imported to use
        ULMFiT model with the SentencePiece Tokenizer.
     """
+
     def __init__(self, lang, vocab_size: int = 50000):
         self.vocab_size = vocab_size
         self.sp = spm.SentencePieceProcessor()

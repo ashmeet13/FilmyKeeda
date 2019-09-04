@@ -1,9 +1,11 @@
+import logging
 import os
 import tarfile
 
+import FilmyKeeda.utils.modelDownload as connection
 import gpt_2_simple as gpt2
 
-import FilmyKeeda.utils.modelDownload as connection
+logging.getLogger().setLevel(logging.INFO)
 
 
 class GPT2:
@@ -19,55 +21,55 @@ class GPT2:
             "events.out.tfevents.1565109747.6bad2fa838cd",
             "encoder.json",
             "counter",
-            "checkpoint"
+            "checkpoint",
         ]
         self.checkModelFile()
-        print("Model file present!")
-        print("Loading model ...")
+        logging.info("Model file present!")
+        logging.info("Loading model ...")
         self.sess = gpt2.start_tf_sess()
         gpt2.load_gpt2(
-            self.sess,
-            run_name=self.runFolder,
-            checkpoint_dir=self.modelFolder
+            self.sess, run_name=self.runFolder, checkpoint_dir=self.modelFolder
         )
-
 
     def checkModelFile(self):
         """Check if every necessary file is present in the models
         folder and if not then download and save.
         """
-        print("Checking GPT2 Model File ...")
+        logging.info("Checking GPT2 Model File ...")
         if not os.path.exists(os.path.join(os.getcwd(), "models")):
             os.mkdir(os.path.join(os.getcwd(), "models"))
         self.modelFolder = os.path.join(os.getcwd(), "models")
         downloadFlag = False
         for checkpointFile in self.checkpointFiles:
-            if(not os.path.exists(os.path.join(self.modelFolder,"GPT2",checkpointFile))):
+            if not os.path.exists(
+                os.path.join(self.modelFolder, "GPT2", checkpointFile)
+            ):
                 downloadFlag = True
                 break
-        if(downloadFlag):
-            if(os.path.exists(os.path.join(self.modelFolder,"GPT2"))):
-                os.remove(os.path.join(self.modelFolder,"GPT2"))
+        if downloadFlag:
+            if os.path.exists(os.path.join(self.modelFolder, "GPT2")):
+                os.remove(os.path.join(self.modelFolder, "GPT2"))
             self.downloadCompressedFile()
-        self.runFolder = os.path.join(self.modelFolder,"GPT2")
-
+        self.runFolder = os.path.join(self.modelFolder, "GPT2")
 
     def downloadCompressedFile(self):
         """Download the compressed model from Google Drive
         """
-        print("File Missing...")
-        print("Downloading File...")
+        logging.warning("File Missing...")
+        logging.info("Downloading File...")
         connection.downloadModelFile(
             id="1AVjqBj7xaB2_GrSJUdKqWD2UeTpo8BnS",
-            destination=os.path.join(self.modelFolder,"GPT2.tar.gz")
+            destination=os.path.join(self.modelFolder, "GPT2.tar.gz"),
         )
         self.decompressFile()
 
     def decompressFile(self):
         """Decompress the model files into the folder.
         """
-        print("Extracting File...")
-        with tarfile.open(os.path.join(self.modelFolder,"GPT2.tar.gz"),"r:gz") as reader:
+        logging.info("Extracting File...")
+        with tarfile.open(
+            os.path.join(self.modelFolder, "GPT2.tar.gz"), "r:gz"
+        ) as reader:
             reader.extractall(self.modelFolder)
 
     def generate(self, text, n_words=1000):
@@ -87,5 +89,5 @@ class GPT2:
             run_name=self.runFolder,
             checkpoint_dir=self.modelFolder,
             prefix=text,
-            length=n_words
+            length=n_words,
         )

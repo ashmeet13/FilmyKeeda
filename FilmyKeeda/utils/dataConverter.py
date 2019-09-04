@@ -1,6 +1,7 @@
 import os
 import re
 
+
 class dataToList:
     @staticmethod
     def getStrings(contents, directoryPath):

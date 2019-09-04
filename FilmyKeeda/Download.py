@@ -1,9 +1,12 @@
+import logging
 import os
 
 import requests
-from bs4 import BeautifulSoup
 
+from bs4 import BeautifulSoup
 from FilmyKeeda.Scrapers import scrapers
+
+logging.getLogger().setLevel(logging.INFO)
 
 
 class download:
@@ -13,6 +16,7 @@ class download:
     Raises:
         ValueError: names not specified as list or string(in case of one item to download)
     """
+
     def __init__(self, names, dataPath=None, verbose=False):
         """Initalise the downloading of transcripts by making sure
         movie names have been recieved and the directory is made in
@@ -52,14 +56,14 @@ class download:
         """Start scraping the movies specified by the user
         """
         if self.verbose:
-            print(self.names)
+            logging.info(self.names)
         for name in self.names:
             if self.verbose:
-                print("Scraping:", name)
+                logging.info("Scraping:", name)
             if name == "The West Wing":
                 failCount = scrapers.westWingScraper(scrapers(), self.dataPath)
                 if self.verbose:
-                    print("Failed Scraping", failCount, "episodes...")
+                    logging.info("Failed Scraping", failCount, "episodes...")
             elif name == "The Social Network":
                 scriptFile = os.path.join(
                     self.dataPath, name.replace(" ", "_") + ".txt"
@@ -91,4 +95,4 @@ class download:
                         )
                     )
             else:
-                print("Transcript not available:", name)
+                logging.warning("Transcript not available:", name)

@@ -1,5 +1,5 @@
-from FilmyKeeda.modelDescriptions.ULMFiT import ULMFiT
 from FilmyKeeda.modelDescriptions.GPT2 import GPT2
+from FilmyKeeda.modelDescriptions.ULMFiT import ULMFiT
 
 
 class scripter:
@@ -8,6 +8,7 @@ class scripter:
     Returns:
         [type] -- [description]
     """
+
     def __init__(self, model="GPT2", tokenizer="fastai"):
         """Set model details and init model class
         
