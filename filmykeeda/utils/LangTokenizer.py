@@ -1,6 +1,6 @@
 import os
 
-import FilmyKeeda.utils.modelDownload as connection
+import filmykeeda.utils.modelDownload as connection
 import sentencepiece as spm
 from fastai.basic_train import load_learner
 from fastai.text import *

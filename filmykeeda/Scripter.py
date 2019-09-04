@@ -1,5 +1,5 @@
-from FilmyKeeda.modelDescriptions.GPT2 import GPT2
-from FilmyKeeda.modelDescriptions.ULMFiT import ULMFiT
+from .modelDescriptions.GPT2 import GPT2
+from .modelDescriptions.ULMFiT import ULMFiT
 
 
 class scripter:

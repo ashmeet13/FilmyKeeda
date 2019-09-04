@@ -1,4 +1,4 @@
-import FilmyKeeda.FilmyKeeda as Keeda
+from filmykeeda import Keeda
 import os
 
 

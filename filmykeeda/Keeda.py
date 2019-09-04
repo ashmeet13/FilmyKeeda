@@ -1,6 +1,6 @@
-from FilmyKeeda.Cleaner import cleanerToCSV, cleanerToText
-from FilmyKeeda.Download import download
-from FilmyKeeda.Scripter import scripter
+from .Cleaner import cleanerToCSV, cleanerToText
+from .Download import download
+from .Scripter import scripter
 
 
 def downladData(nameList, dataPath=None, verbose=False):

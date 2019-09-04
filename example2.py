@@ -1,5 +1,5 @@
-import FilmyKeeda.FilmyKeeda as Keeda
-from FilmyKeeda.utils.LangTokenizer import LangTokenizer
+from filmykeeda import Keeda
+from filmykeeda.utils.LangTokenizer import LangTokenizer
 import os
 
 scriptWriter = Keeda.getWriter("ULMFiT", tokenizer="SentencePiece")

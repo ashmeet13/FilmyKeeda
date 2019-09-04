@@ -1,10 +1,10 @@
 import logging
 import os
 
-import FilmyKeeda.utils.modelDownload as connection
+import filmykeeda.utils.modelDownload as connection
 from fastai.basic_train import load_learner
 from fastai.text import *
-from FilmyKeeda.utils.LangTokenizer import LangTokenizer
+from filmykeeda.utils.LangTokenizer import LangTokenizer
 
 logging.getLogger().setLevel(logging.INFO)
 

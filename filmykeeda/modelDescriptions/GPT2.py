@@ -2,7 +2,7 @@ import logging
 import os
 import tarfile
 
-import FilmyKeeda.utils.modelDownload as connection
+import filmykeeda.utils.modelDownload as connection
 import gpt_2_simple as gpt2
 
 logging.getLogger().setLevel(logging.INFO)

@@ -1,7 +1,7 @@
 import os
 
 import pandas as pd
-from FilmyKeeda.utils.dataConverter import dataToList
+from .utils.dataConverter import dataToList
 
 
 class cleanerToCSV:

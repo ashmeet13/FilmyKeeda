@@ -4,7 +4,7 @@ import os
 import requests
 
 from bs4 import BeautifulSoup
-from FilmyKeeda.Scrapers import scrapers
+from .Scrapers import scrapers
 
 logging.getLogger().setLevel(logging.INFO)
 
