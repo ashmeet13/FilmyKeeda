@@ -10,7 +10,22 @@ The package currently supports two models -
 ### Download -
 
 ```pip install filmykeeda```
+---
 
+
+### Usage -
+
+This repository currently holds 4 example.py files demonstrating the use of this package.
+
+```
+example0.py - This will demonstrate on how you can download the corpus
+
+example1.py - This will demonstrate on how to generate script using ULMFiT + Default Tokenizer
+
+example2.py - This will demonstrate on how to generate script using ULMFiT + SentencePiece Tokenizer
+
+example3.py - This will demonstrate on how to generate script using GPT2
+```
 ---
 ### Data Used -
 
@@ -44,22 +59,9 @@ GPT2 does not allow an external tokenizer to be used and hence
 the model has been simply finetuned to our corpus.
 ```
 ---
-### Usage -
-
-This repository currently holds 4 example.py files demonstrating the use of this package.
-
-```
-example0.py - This will demonstrate on how you can download the corpus
-
-example1.py - This will demonstrate on how to generate script using ULMFiT + Default Tokenizer
-
-example2.py - This will demonstrate on how to generate script using ULMFiT + SentencePiece Tokenizer
-
-example3.py - This will demonstrate on how to generate script using GPT2
-```
----
 ### TODO -
 
-1. Package this project as PIP Library
-2. Add evaluation scheme's for generated scripts such as ROUGE and Perplexity
-3. Clean ULMFiT generated script
+- [x] Package this project as PIP Library
+- [ ] Add evaluation scheme's for generated scripts such as ROUGE and Perplexity
+- [ ] Clean ULMFiT generated script
+- [ ] User to have the ability to train his model
