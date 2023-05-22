@@ -1,4 +1,4 @@
-requests==2.22.0
+requests==2.31.0
 beautifulsoup4==4.8.0
 fastai==1.0.57
 gpt_2_simple==0.5.4
